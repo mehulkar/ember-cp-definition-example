@@ -1,51 +1,26 @@
 # ember-cp-definition-example
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
 
-## Prerequisites
+## Overview
 
-You will need the following things properly installed on your computer.
+This sample app shows two potential bugs with `ComputedProperty`:
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+1. Cache does not invalidate when an external `Ember.Service` property changes, unless that property is used in the component.
+1. In Ember 3.1, a `ComputedProperty` defined in the `init` hook does not update when a `Ember.Service` property is updated.
 
-## Installation
+## Details
 
-* `git clone <repository-url>` this repository
-* `cd ember-cp-definition-example`
-* `npm install`
+This app has a component `foo-bar` with three computed properties defined in 3 different ways:
 
-## Running / Development
+- On the prototype
+- In the `init` hook
+- Using an Immediately Invoked Function Expression
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+Please read the commit log and check out the app at different commits to see the different behaviors.
 
-### Code Generators
+## Try it out
 
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+```bash
+npm install
+ember s
+```
