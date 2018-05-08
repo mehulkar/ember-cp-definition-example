@@ -1,6 +1,6 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
-import { computed } from '@ember/object';
+import { computed, defineProperty } from '@ember/object';
 
 export default Component.extend({
   someService: service(),
@@ -20,7 +20,7 @@ export default Component.extend({
     const cp = computed(...dependentKeys, function() {
       return this.get('items').filter(item => item.shouldDisplay);
     });
-    this.set('initCP', cp);
+    defineProperty(this, 'initCP', cp);
   },
 
   iifeCP: (() => {

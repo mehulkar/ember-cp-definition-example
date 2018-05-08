@@ -6,7 +6,6 @@
 This sample app shows two potential bugs with `ComputedProperty`:
 
 1. Cache does not invalidate when an external `Ember.Service` property changes, unless that property is used in the component.
-1. In Ember 3.1, a `ComputedProperty` defined in the `init` hook does not update when a `Ember.Service` property is updated.
 
 ## Details
 
